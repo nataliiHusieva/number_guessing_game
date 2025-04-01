@@ -11,10 +11,16 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         int inputNumber = scan.nextInt();
 
-        if (inputNumber != numberToGuess) {
-            System.out.println("Wrong guess!");
-        } else {
+        if (inputNumber == numberToGuess) {
             System.out.println("You won!");
+        }
+
+        if (inputNumber < numberToGuess) {
+            System.out.println("Too small!");
+        }
+
+        if (inputNumber > numberToGuess) {
+            System.out.println("Too big!");
         }
     }
 }
