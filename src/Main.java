@@ -28,7 +28,6 @@ public class Main {
 
     static int generateRandomNumber(){
         Random random = new Random();
-        int numberToGuess = random.nextInt(100) + 1;
-        return numberToGuess;
+        return random.nextInt(100) + 1;
     }
 }
