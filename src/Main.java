@@ -7,20 +7,25 @@ public class Main {
         System.out.println("Please, enter your number from 1 to 100.");
 
         Random random = new Random();
-        int numberToGuess = random.nextInt(100) + 1;
         Scanner scan = new Scanner(System.in);
-        int inputNumber = scan.nextInt();
+        int numberToGuess = random.nextInt(100) + 1;
 
-        if (inputNumber == numberToGuess) {
-            System.out.println("You won!");
-        }
+        int inputNumber = 0;
 
-        if (inputNumber < numberToGuess) {
-            System.out.println("Too small!");
-        }
+        while (inputNumber != numberToGuess) {
+            inputNumber = scan.nextInt();
 
-        if (inputNumber > numberToGuess) {
-            System.out.println("Too big!");
+            if (inputNumber == numberToGuess) {
+                System.out.println("You won!");
+            }
+
+            if (inputNumber < numberToGuess) {
+                System.out.println("Too small!");
+            }
+
+            if (inputNumber > numberToGuess) {
+                System.out.println("Too big!");
+            }
         }
     }
 }
