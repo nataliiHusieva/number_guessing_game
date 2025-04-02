@@ -21,11 +21,8 @@ public class Main {
                     System.out.println("Do you want to play again? Enter Y to play again!");
                     String userChoice = scan.next();
                     System.out.println(userChoice);
-                    if (userChoice.equals("Y")){
-                        choice = true;
-                    }else {
-                        choice = false;
-                    }
+
+                    choice = userChoice.equals("Y");
                 }
 
                 if (inputNumber < numberToGuess) {
