@@ -3,27 +3,41 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
-        System.out.println("Please, enter your number from 1 to 100.");
         Scanner scan = new Scanner(System.in);
-        int numberToGuess = generateRandomNumber();
-        int inputNumber = 0;
+        boolean choice = false;
 
-        while (inputNumber != numberToGuess) {
-            inputNumber = scan.nextInt();
+        do {
+            System.out.println("Please, enter your number from 1 to 100.");
 
-            if (inputNumber == numberToGuess) {
-                System.out.println("You won!");
+            int numberToGuess = generateRandomNumber();
+            int inputNumber = 0;
+
+            while (inputNumber != numberToGuess) {
+                inputNumber = scan.nextInt();
+
+                if (inputNumber == numberToGuess) {
+                    System.out.println("You won!");
+
+                    System.out.println("Do you want to play again? Enter Y to play again!");
+                    String userChoice = scan.next();
+                    System.out.println(userChoice);
+                    if (userChoice.equals("Y")){
+                        choice = true;
+                    }else {
+                        choice = false;
+                    }
+                }
+
+                if (inputNumber < numberToGuess) {
+                    System.out.println("Too small!");
+                }
+
+                if (inputNumber > numberToGuess) {
+                    System.out.println("Too big!");
+                }
             }
 
-            if (inputNumber < numberToGuess) {
-                System.out.println("Too small!");
-            }
-
-            if (inputNumber > numberToGuess) {
-                System.out.println("Too big!");
-            }
-        }
+        } while(choice);
     }
 
     static int generateRandomNumber(){
