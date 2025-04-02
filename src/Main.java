@@ -17,12 +17,7 @@ public class Main {
 
                 if (inputNumber == numberToGuess) {
                     System.out.println("You won!");
-
-                    System.out.println("Do you want to play again? Enter Y to play again!");
-                    String userChoice = scan.next();
-                    System.out.println(userChoice);
-
-                    choice = userChoice.equals("Y");
+                    choice = shouldStartNewGame(scan);
                 }
 
                 if (inputNumber < numberToGuess) {
@@ -34,11 +29,19 @@ public class Main {
                 }
             }
 
-        } while(choice);
+        } while (choice);
     }
 
-    static int generateRandomNumber(){
+    static int generateRandomNumber() {
         Random random = new Random();
         return random.nextInt(100) + 1;
+    }
+
+    static boolean shouldStartNewGame(Scanner scan) {
+        System.out.println("Do you want to play again? Enter Y to play again!");
+        String userChoice = scan.next();
+        System.out.println(userChoice);
+
+        return userChoice.equals("Y");
     }
 }
